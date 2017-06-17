@@ -1,0 +1,76 @@
+<html>
+  <style>
+    html, body{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      min-height: 2000px;
+    }
+    h1 {
+      max-width: 500px;
+      font-family: 'Lato', sans-serif;
+      font-style: italic;
+      margin: 100px auto;
+      padding: 30px 0 200px;
+      text-align: center;
+      font-size: 100px;
+      perspective: 10px;
+      transform: perspective(400px);
+      background-image: url("./img/desktop.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    p {
+      text-align: center;
+      font-size: 40px;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400i" rel="stylesheet">
+  <title>OUT OF SCREEN</title>
+</head>
+<body>
+
+<h1>OUT OF<br>SCREEN</h1>
+
+<p> 🚀 soon 🚀 </p>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    const $title = $("h1");
+    const titleHeight = $title.offset().top + $title.height();
+    console.log("title is ", titleHeight);
+
+    var textShadows = function(pos) {
+      var res = [];
+      for (var i=1; i< pos * 30 + 1; i++) {
+        const c = 100 + Math.round(i / 30 * 100);
+        res.push(`0 ${i}px rgb(${c}, ${c}, ${c})`);
+      }
+      return res.join(",");
+    };
+
+    var transform = function(pos) {
+      const p = 400;
+      const r = 40 * pos;
+      const s = 1;
+      return `perspective(${p}px) rotateX(${r}deg) scale(${s})`;
+    };
+
+    $(window).scroll(function(e){
+      const pos = window.scrollY / titleHeight;
+
+      const newCss = textShadows(pos);
+      const transformCss = transform(pos);
+      console.log("newCss is", newCss);
+      $title.css("text-shadow", newCss);
+      $title.css("transform", transformCss);
+
+    });
+  });
+</script>
+
+</body>
+</html>
