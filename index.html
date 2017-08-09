@@ -1,68 +1,316 @@
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html, body{
+    a {
+      color: #000;
+    }
+    @font-face {
+      font-family: "Lato-Regular";
+      src: url('src/Lato-Regular.ttf');
+    }
+    @font-face {
+      font-family: "Lato-Italic";
+      src: url('src/Lato-Italic.ttf');
+    }
+    html, body, .title-background, p{
       margin: 0;
       padding: 0;
     }
-    body{
-      min-height: 3000px;
+    html, body{
+      /* min-height: 3000px; */
+      overflow-x: hidden;
+      width: 100%;
+      font-family: 'Lato-Regular', sans-serif;
+    }
+    .wrapper{
+      width: 100%;
     }
     .title-wrapper{
+      position: relative;
+      overflow-x: hidden;
+      background-color: rgb(64, 53, 50);
+    }
+    .title-background {
+      font-family: 'Lato-Italic';
+      position: relative;
       height: 100%;
-      width: 100%;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      position: relative;
-      width: 90vmin;
-      height: 76vmin;
-      font-size: 20vmin;
-      padding-top: 3vmin;
-      box-sizing: border-box;
-      font-family: 'Lato', sans-serif;
-      font-style: italic;
-      text-align: center;
-      perspective: 10px;
-      transform: perspective(400px);
-      background-image: url("./img/desktop.png");
-      background-size: cover;
+      background-image: url("./img/bg-original.jpg");
       background-repeat: no-repeat;
+      background-position: 50% 0;
+      transition: 0.01s ease;
+      transform: perspective(400px);
+      color: #fff;
+      text-align: center;
     }
-    .title-text{
+    .title-text {
       position: absolute;
-      left: 10vmin;
     }
-    p {
+    @media screen and (max-width: 500px) {
+      .title-background {
+        background-size: 200vw auto;
+        width: 200vw;
+        left: -50vw;
+      }
+      .title-text {
+        top: 76vw;
+        left: 77vw;
+        font-size: 13vw;
+      }
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px) {
+      .title-background {
+        background-size: 150vw auto;
+        width: 150vw;
+        left: -25vw;
+      }
+      .title-text {
+        top: 57vw;
+        left: 57vw;
+        font-size: 10vw;
+      }
+    }
+    @media screen and (min-width: 800px) and (max-width: 1000px) {
+      .title-background {
+        background-size: 120vw auto;
+        width: 120vw;
+        left: -10vw;
+      }
+      .title-text {
+        top: 45vw;
+        left: 45vw;
+        font-size: 8vw;
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      .title-background {
+        background-size: 120vw auto;
+        width: 120vw;
+        left: -10vw;
+        background-position: 50% -20vw;
+      }
+      .title-text {
+        top: 25vw;
+        left: 46vw;
+        font-size: 8vw;
+      }
+    }
+    .content-wrapper{
+      max-width: 600px;
+      margin: auto;
+      padding: 50px 5vw;
+    }
+    .tagline, .contact {
+      background-color: rgb(64, 53, 50);
+      color: #fff;
+    }
+    .tagline {
+      padding-top: 120px;
+      padding-bottom: 150px;
       text-align: center;
       font-size: 40px;
     }
+    .description {
+      background-color: #fff;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .portfolio {
+      background-color: rgb(247, 204, 169);
+    }
+    .portfolio-item {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px dotted #fff;
+    }
+    .portfolio-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+    @media screen and (max-width: 500px) {
+      .portfolio-image img {
+        max-width: 100%;
+      }
+    }
+    @media screen and (min-width: 500px) {
+      .portfolio-image {
+        margin-right: 30px;
+      }
+      .portfolio-item {
+        display: flex;
+        flex-direction: row;
+      }
+      .portfolio-item h3 {
+        margin-top: 0;
+      }
+      .portfolio-image img {
+        max-width: 200px;
+      }
+    }
+
+    .member {
+      margin-top: 30px;
+    }
+    .member-avatar img {
+      width: 100px;
+      border-radius: 50px;
+    }
+    .member-avatar {
+      margin-left: 30px;
+      width: 100px;
+    }
+    .member {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .member h3 {
+      margin-top: 0;
+    }
+    .member-description {
+      flex-grow: 1;
+    }
+    .img-silhouette {
+      background-color: #ddd;
+    }
+
+    .contact {
+      padding-bottom: 30px;
+    }
+    .contact a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .button-mail{
+      display: inline-block;
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #fff;
+    }
+    .button-mail:hover{
+      background-color: #fff;
+      color: rgb(64, 53, 50);
+    }
+
   </style>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400i" rel="stylesheet">
   <title>OUT OF SCREEN</title>
 </head>
 <body>
-
-<div class="title-wrapper">
-  <h1>
-    <span class='title-text'>
-      OUT OF<br>SCREEN
-    </span>
-  </h1>
+<div class="wrapper">
+  <div class="title-wrapper">
+    <div class='title-background'>
+      <div class='title-text'>OUT OF<br>SCREEN</div>
+    </div>
+  </div>
 </div>
 
-<p> 🚀 soon 🚀 </p>
+<div class='tagline'>
+  <div class='content-wrapper'>
+    Websites and more
+  </div>
+</div>
+
+<div class="description">
+  <div class='content-wrapper'>
+    <i>OUT&nbsp;OF&nbsp;SCREEN</i> is a software development agency specialized in web technologies. Our main areas of expertise are <b>Ruby&nbsp;On&nbsp;Rails</b>, <b>NodeJS</b> and <b>Python</b> stacks.<br/>
+    We also have extensive experience in <b>web scraping</b> and <b>data mining</b>.
+  </div>
+</div>
+
+
+<div class="portfolio">
+  <div class='content-wrapper'>
+    <h2>Recent Projects</h2>
+    <div class='portfolio-wrapper'>
+      <div class='portfolio-item'>
+        <div class='portfolio-image'>
+          <img src='./img/anyojibeltrando-cropped.png' alt='anyojibeltrando screenshot'>
+        </div>
+        <div class='portfolio-description'>
+          <h3>
+            2017 - <a href='http://www.anyojibeltrando.com/'>ANYOJIBELTRANDO</a>
+          </h3>
+          <p>
+            Wordpress website for an architecture agency. We developed a custom theme with a custom content slider and different responsive layouts.
+          </p>
+        </div>
+      </div>
+
+      <div class='portfolio-wrapper'>
+        <div class='portfolio-item'>
+          <div class='portfolio-image'>
+            <img src='./img/anteprima-prime.png' alt='anteprima prime screenshot'>
+          </div>
+          <div class='portfolio-description'>
+            <h3>
+              2016 - <a href='http://www.anteprima-prime.com/'>Anteprima Prime</a>
+            </h3>
+            <p>
+              Simple music catalog for a music label. It features a custom music player, with files stored on AWS S3.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='team'>
+  <div class='content-wrapper'>
+    <h2>Team</h2>
+
+    <div class='member'>
+      <div class='member-avatar'>
+        <img src='./img/adrien.jpg'>
+      </div>
+      <div class='member-description'>
+        <h3>Adrien Di Pasquale</h3>
+        <p>
+          After graduating a CS master's degree from <a href='https://www.insa-lyon.fr/'>INSA Lyon</a>, I have accumulated a solid experience by working as a fullstack developer at 2 startups, <a href='https://www.pricingassistant.com/'>Pricing Assistant</a> and <a href='https://www.drivy.com'>Drivy</a>. I am an avid learner and am always eager to help fulfill new projects.
+        </p>
+      </div>
+    </div>
+
+    <div class='member'>
+      <div class='member-avatar'>
+        <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgZmlsbD0iIzAwMDAwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwMCAxMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGQ9Ik03OS40NDUsOTIuN2MzLjEzNi0zLjE1LDUuMDU3LTguNjU5LDUuMzI3LTEzLjU3NGMwLTE2LjcxOS0xNS40NjgtMzAuMjc1LTM0LjYxNC0zMC40Mjd2LTAuMDE0ICAgYy0wLjA1MywwLTAuMTA1LDAuMDA3LTAuMTU4LDAuMDA3Yy0wLjA1NSwwLTAuMTA3LTAuMDA3LTAuMTYtMC4wMDd2MC4wMTRjLTE5LjE0NiwwLjE1MS0zNC42MTIsMTMuNzA4LTM0LjYxMiwzMC40MjcgICBjMC4yNjcsNC45MTUsMi4xODksMTAuNDI0LDUuMzI0LDEzLjU3NEMyMy41NTYsOTUuODgzLDc4LjMxLDk1LjY0OCw3OS40NDUsOTIuN3oiLz48cGF0aCBkPSJNNTAuMDAyLDQzLjU0MWMxMS4zNzgsMCwxOS4xMDktOC42MjgsMTkuMTA5LTE5LjI3MVM2MS4zOCw1LDUwLjAwMiw1Yy0xMS4zOCwwLTE5LjExMyw4LjYyOC0xOS4xMTMsMTkuMjcgICBTMzguNjIyLDQzLjU0MSw1MC4wMDIsNDMuNTQxeiIvPjwvZz48L3N2Zz4=' class='img-silhouette'>
+      </div>
+      <div class='member-description'>
+        <h3>You ?</h3>
+        <p>
+          Come and join a nice adventure
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='contact'>
+  <div class='content-wrapper'>
+    <h2>Contact</h2>
+    <p>
+      We are always happy to meet you and discuss your projects. Don't hesitate to reach out !
+    </p>
+    <a href='mailto:adrien@outofscreen.com' class='button-mail'>adrien@outofscreen.com</a>
+  </div>
+</div>
 
 <script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.ba-throttle-debounce.min.js"></script>
 
 <script>
   $(document).ready(function(){
-    const $title = $("h1");
+    const $titleBackground = $(".title-background");
     const $titleText = $(".title-text");
-    const titleHeight = $title.offset().top + $title.height();
+    const originalTransform = "perspective(400px)";
+
+    let titleHeight;
+    let originalTop;
+
+    var resetSizes = function() {
+      $titleBackground.css({"text-shadow": "", "transform": originalTransform});
+      titleHeight = $titleBackground.offset().top + $titleBackground.height();
+      $titleText.css({"top": ""});
+      originalTop = parseInt($titleText.css("top"))
+    }
 
     var textShadows = function(pos) {
       const MAX_SHADOW_SIZE = 100;
@@ -70,7 +318,6 @@
       const GREY_START = 100;
       var res = [];
       for (var i=1; i < pos * MAX_SHADOW_SIZE + 1; i++) {
-
         const c = GREY_START + Math.round(i / 100 * pos * GREY_DELTA);
         res.push(`0 ${i}px rgb(${c}, ${c}, ${c})`);
       }
@@ -78,27 +325,47 @@
     };
 
     var transform = function(pos) {
-      const p = 400;
-      const r = 40 * pos;
-      const s = 1 - 0.45*pos;
-      return `perspective(${p}px) rotateX(${r}deg) scale(${s})`;
+      const r = 20 * pos;
+      const s = 1 - 0.3 * pos ;
+      return `${originalTransform} rotateX(${r}deg) scale(${s})`;
     };
 
     var top = function(pos) {
-      return `${20 + pos * -60}px`
+      return `${originalTop - 100 * pos}px`
     };
 
-    const handleScroll = function() {
-      const pos = window.scrollY / titleHeight;
+    let latestPos = 0;
+    let ticking = false;
 
-      const newCss = textShadows(pos);
-      const transformCss = transform(pos);
-      const topCss = top(pos);
-      $title.css("text-shadow", newCss);
-      $title.css("transform", transformCss);
+    function handleScroll() {
+      const newPos = Math.min(window.scrollY / titleHeight, 1);
+      if (latestPos != newPos) {
+        latestPos = newPos;
+        requestTick();
+      }
+    }
+
+    function requestTick() {
+      if (!ticking) {
+        requestAnimationFrame(repaint);
+      }
+      ticking = true;
+    }
+
+    const repaint = function() {
+      ticking = false;
+      const newCss = textShadows(latestPos);
+      const transformCss = transform(latestPos);
+      const topCss = top(latestPos);
+      $titleBackground.css("text-shadow", newCss);
+      $titleBackground.css("transform", transformCss);
       $titleText.css("top", topCss);
     }
-    $(window).scroll(handleScroll);
+
+    resetSizes()
+    $(window).resize(resetSizes);
+
+    $(window).scroll($.throttle(10, handleScroll));
     handleScroll();
   });
 </script>
