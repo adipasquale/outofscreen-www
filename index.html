@@ -150,23 +150,14 @@
     .member {
       margin-top: 30px;
     }
-    .member-avatar img {
+    .member-title img {
       width: 100px;
       border-radius: 50px;
-    }
-    .member-avatar {
-      margin-left: 30px;
-      width: 100px;
-    }
-    .member {
-      display: flex;
-      flex-direction: row-reverse;
+      vertical-align: middle;
+      margin-right: 15px;
     }
     .member h3 {
       margin-top: 0;
-    }
-    .member-description {
-      flex-grow: 1;
     }
     .img-silhouette {
       background-color: #ddd;
@@ -258,27 +249,23 @@
     <h2>Team</h2>
 
     <div class='member'>
-      <div class='member-avatar'>
+      <h3 class='member-title'>
         <img src='./img/adrien.jpg'>
-      </div>
-      <div class='member-description'>
-        <h3>Adrien Di Pasquale</h3>
-        <p>
-          After graduating a CS master's degree from <a href='https://www.insa-lyon.fr/'>INSA Lyon</a>, I have accumulated a solid experience by working as a fullstack developer at 2 startups, <a href='https://www.pricingassistant.com/'>Pricing Assistant</a> and <a href='https://www.drivy.com'>Drivy</a>. I am an avid learner and am always eager to help fulfill new projects.
-        </p>
-      </div>
+        Adrien Di Pasquale
+      </h3>
+      <p class='member-description'>
+        After graduating a CS master's degree from <a href='https://www.insa-lyon.fr/'>INSA Lyon</a>, I have accumulated a solid experience by working as a fullstack developer at 2 startups, <a href='https://www.pricingassistant.com/'>Pricing Assistant</a> and <a href='https://www.drivy.com'>Drivy</a>. I am an avid learner and am always eager to help fulfill new projects.
+      </p>
     </div>
 
     <div class='member'>
-      <div class='member-avatar'>
+      <h3 class='member-title'>
         <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgZmlsbD0iIzAwMDAwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwMCAxMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGQ9Ik03OS40NDUsOTIuN2MzLjEzNi0zLjE1LDUuMDU3LTguNjU5LDUuMzI3LTEzLjU3NGMwLTE2LjcxOS0xNS40NjgtMzAuMjc1LTM0LjYxNC0zMC40Mjd2LTAuMDE0ICAgYy0wLjA1MywwLTAuMTA1LDAuMDA3LTAuMTU4LDAuMDA3Yy0wLjA1NSwwLTAuMTA3LTAuMDA3LTAuMTYtMC4wMDd2MC4wMTRjLTE5LjE0NiwwLjE1MS0zNC42MTIsMTMuNzA4LTM0LjYxMiwzMC40MjcgICBjMC4yNjcsNC45MTUsMi4xODksMTAuNDI0LDUuMzI0LDEzLjU3NEMyMy41NTYsOTUuODgzLDc4LjMxLDk1LjY0OCw3OS40NDUsOTIuN3oiLz48cGF0aCBkPSJNNTAuMDAyLDQzLjU0MWMxMS4zNzgsMCwxOS4xMDktOC42MjgsMTkuMTA5LTE5LjI3MVM2MS4zOCw1LDUwLjAwMiw1Yy0xMS4zOCwwLTE5LjExMyw4LjYyOC0xOS4xMTMsMTkuMjcgICBTMzguNjIyLDQzLjU0MSw1MC4wMDIsNDMuNTQxeiIvPjwvZz48L3N2Zz4=' class='img-silhouette'>
-      </div>
-      <div class='member-description'>
-        <h3>You ?</h3>
-        <p>
-          Come and join a nice adventure
-        </p>
-      </div>
+        You ?
+      </h3>
+      <p class='member-description'>
+        Come and join
+      </p>
     </div>
   </div>
 </div>
@@ -325,8 +312,8 @@
     };
 
     var transform = function(pos) {
-      const r = 20 * pos;
-      const s = 1 - 0.3 * pos ;
+      const r = Math.round(15 * pos * 10) / 10;
+      const s = Math.round((1 - 0.25 * pos) * 1000) / 1000;
       return `${originalTransform} rotateX(${r}deg) scale(${s})`;
     };
 
@@ -338,7 +325,7 @@
     let ticking = false;
 
     function handleScroll() {
-      const newPos = Math.min(window.scrollY / titleHeight, 1);
+      const newPos = Math.round(Math.min(window.scrollY / titleHeight, 1) * 1000) / 1000;
       if (latestPos != newPos) {
         latestPos = newPos;
         requestTick();
@@ -362,8 +349,12 @@
       $titleText.css("top", topCss);
     }
 
-    resetSizes()
-    $(window).resize(resetSizes);
+    resetSizes();
+    // $(window).resize(function(){ resetSizes});
+    // creates jump on mobiles
+
+    // hard-set height in px so it doesn't jump on mobile browsers scroll
+    $titleBackground.css({"height": $titleBackground.css("height")})
 
     $(window).scroll($.throttle(10, handleScroll));
     handleScroll();
