@@ -38,13 +38,14 @@
       background-image: url("./img/bg-original.jpg");
       background-repeat: no-repeat;
       background-position: 50% 0;
-      transition: 0.01s ease;
+      /* transition: 0.5s ease-in; */
       transform: perspective(400px);
       color: #fff;
       text-align: center;
     }
     .title-text {
       position: absolute;
+      transition: 0.2s ease;
     }
     @media screen and (max-width: 500px) {
       .title-background {
@@ -207,7 +208,6 @@
   </div>
 </div>
 
-
 <div class="portfolio">
   <div class='content-wrapper'>
     <h2>Recent Projects</h2>
@@ -288,13 +288,12 @@
   $(document).ready(function(){
     const $titleBackground = $(".title-background");
     const $titleText = $(".title-text");
-    const originalTransform = "perspective(400px)";
 
     let titleHeight;
     let originalTop;
 
     var resetSizes = function() {
-      $titleBackground.css({"text-shadow": "", "transform": originalTransform});
+      $titleBackground.css({"text-shadow": ""});
       titleHeight = $titleBackground.offset().top + $titleBackground.height();
       $titleText.css({"top": ""});
       originalTop = parseInt($titleText.css("top"))
@@ -312,12 +311,6 @@
       return res.join(",");
     };
 
-    var transform = function(pos) {
-      const r = Math.round(15 * pos * 10) / 10;
-      const s = Math.round((1 - 0.25 * pos) * 1000) / 1000;
-      return `${originalTransform} rotateX(${r}deg) scale(${s})`;
-    };
-
     var top = function(pos) {
       return `${originalTop - 100 * pos}px`
     };
@@ -325,28 +318,22 @@
     let latestPos = 0;
     let ticking = false;
 
-    function handleScroll() {
-      const newPos = Math.round(Math.min(window.scrollY / titleHeight, 1) * 1000) / 1000;
+    function requestTick(newPos) {
       if (latestPos != newPos) {
         latestPos = newPos;
-        requestTick();
+        if (!ticking) {
+          requestAnimationFrame(repaint);
+        }
+        ticking = true;
       }
-    }
-
-    function requestTick() {
-      if (!ticking) {
-        requestAnimationFrame(repaint);
-      }
-      ticking = true;
     }
 
     const repaint = function() {
       ticking = false;
-      const newCss = textShadows(latestPos);
-      const transformCss = transform(latestPos);
-      const topCss = top(latestPos);
+      const drawnPos = latestPos * 0.5; // limit amplitude
+      const newCss = textShadows(drawnPos);
+      const topCss = top(drawnPos);
       $titleBackground.css("text-shadow", newCss);
-      $titleBackground.css("transform", transformCss);
       $titleText.css("top", topCss);
     }
 
@@ -357,8 +344,14 @@
     // hard-set height in px so it doesn't jump on mobile browsers scroll
     $titleBackground.css({"height": $titleBackground.css("height")})
 
-    $(window).scroll($.throttle(10, handleScroll));
-    handleScroll();
+    function handleMouseMove(event) {
+      const newPos = Math.round(
+        Math.min(event.pageY / titleHeight, 1) * 1000
+      ) / 1000;
+      requestTick(newPos);
+    };
+    $("body").mousemove($.throttle(50, handleMouseMove));
+    $("body").on("touchstart", function(e) { handleMouseMove(e.touches[0]) });
   });
 </script>
 
