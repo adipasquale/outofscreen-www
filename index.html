@@ -1,7 +1,12 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="14tLV-rPpZyjgHChdqX6GtwjtBBJMIQN-E5OFRXPB3U" />
+
+  <meta property='og:title' content="OUT OF SCREEN">
+  <meta property='og:image' content="http://www.outofscreen.com/img/logo.png">
+  <meta property='og:description' content="OUT OF SCREEN is a software development agency specialized in web technologies">
+  <meta property='og:url' content="http://www.outofscreen.com">
+
   <link rel="icon" href="./img/favicon.png">
   <style>
     a {
@@ -165,7 +170,7 @@
     margin-bottom: 40px;
   }
   .tagline img {
-    max-width: 30%;
+    max-width: 54px;
   }
 </style>
 
@@ -321,9 +326,13 @@
       We are always happy to meet you and discuss your projects. Don't hesitate to reach out !
     </p>
     <p class='center'>
-      <a href='mailto:adrien@outofscreen.com' class='button-mail'>
+      <a href='mailto:adrien@outofscreen.com' class="button">
         <img src="img/envelope.png">
         adrien@outofscreen.com
+      </a>
+      <a href="tel:+33644634416" class="button">
+        <img src="img/phone-icon.png">
+        (+33)6 44 63 44 16
       </a>
     </p>
   </div>
@@ -343,7 +352,7 @@
   p.center {
     text-align: center;
   }
-  a.button-mail{
+  .contact a.button{
     color: #fff;
     text-decoration: none;
     display: inline-block;
@@ -351,17 +360,21 @@
     padding: 20px;
     border: 1px solid #fff;
   }
-  .button-mail img{
-    width: 24px;
+  .contact .button img{
+    max-height: 18px;
     color: #fff;
     filter: invert(1);
     vertical-align: middle;
     margin-right: 10px;
   }
-  a.button-mail:hover{
+  .contact a.button:hover{
     background-color: #fff;
     color: rgb(64, 53, 50);
   }
+  .contact a.button:hover img{
+    filter: none;
+  }
+
 </style>
 
 </body>
