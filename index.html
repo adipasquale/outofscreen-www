@@ -5,239 +5,169 @@
     a {
       color: #000;
     }
-    @font-face {
-      font-family: "Lato-Regular";
-      src: url('src/Lato-Regular.ttf');
-    }
-    @font-face {
-      font-family: "Lato-Italic";
-      src: url('src/Lato-Italic.ttf');
+    a:hover {
+      color: #5d8bc7;
     }
     html, body, .title-background, p{
       margin: 0;
       padding: 0;
+      font-family: Helvetica;
     }
     html, body{
       /* min-height: 3000px; */
-      overflow-x: hidden;
-      width: 100%;
-      font-family: 'Lato-Regular', sans-serif;
-    }
-    .wrapper{
       width: 100%;
     }
-    .title-wrapper{
-      position: relative;
-      overflow-x: hidden;
+    body {
+      margin-top: 100px;
     }
-    .title-background {
-      font-family: 'Lato-Italic';
-      position: relative;
-      height: 100%;
-      background-image: url("./img/bg-original-min.jpg");
-      background-repeat: no-repeat;
-      background-position: 50% 0;
-      /* transition: 0.5s ease-in; */
-      transform: perspective(400px);
-      color: #fff;
-      text-align: center;
-    }
-    .title-text {
-      position: absolute;
-      transition: 0.5s ease;
-      cursor: pointer;
-      user-select: none;
-    }
-    @media screen and (max-width: 500px) {
-      .title-background {
-        background-size: 200vw auto;
-        width: 200vw;
-        left: -50vw;
-      }
-      .title-text {
-        top: 76vw;
-        left: 77vw;
-        font-size: 13vw;
-      }
-    }
-    @media screen and (min-width: 500px) and (max-width: 800px) {
-      .title-background {
-        background-size: 150vw auto;
-        width: 150vw;
-        left: -25vw;
-      }
-      .title-text {
-        top: 57vw;
-        left: 57vw;
-        font-size: 10vw;
-      }
-    }
-    @media screen and (min-width: 800px) and (max-width: 1000px) {
-      .title-background {
-        background-size: 120vw auto;
-        width: 120vw;
-        left: -10vw;
-      }
-      .title-text {
-        top: 45vw;
-        left: 45vw;
-        font-size: 8vw;
-      }
-    }
-    @media screen and (min-width: 1000px) {
-      .title-background {
-        background-size: 100vw auto;
-        width: 100vw;
-        /* left: -10vw; */
-        background-position: 50% -20vw;
-      }
-      .title-text {
-        top: 17vw;
-        left: 37vw;
-        font-size: 7vw;
-      }
-    }
+
     .content-wrapper{
       max-width: 600px;
       margin: auto;
-      padding: 50px 5vw;
+      padding: 50px 15px;
     }
-    .contact {
-      background-color: rgb(64, 53, 50);
-      color: #fff;
-      padding: 50px 5vw;
-    }
-    .tagline {
-      padding-top: 120px;
-      padding-bottom: 150px;
-      text-align: center;
-      font-size: 40px;
-    }
-    .description {
-      font-size: 20px;
-      line-height: 30px;
-    }
-    .portfolio-item {
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 1px dotted #fff;
-    }
-    .portfolio-item:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
-    @media screen and (max-width: 500px) {
-      .portfolio-image img {
-        max-width: 100%;
-      }
-    }
-    @media screen and (min-width: 500px) {
-      .portfolio-image {
-        margin-right: 30px;
-      }
-      .portfolio-item {
-        display: flex;
-        flex-direction: row;
-      }
-      .portfolio-item h3 {
-        margin-top: 0;
-      }
-      .portfolio-image img {
-        max-width: 200px;
-      }
-    }
-
-    .member {
-      margin-top: 30px;
-    }
-    .member-title img {
-      width: 100px;
-      border-radius: 50px;
-      vertical-align: middle;
-      margin-right: 15px;
-    }
-    .member h3 {
-      margin-top: 0;
-    }
-    .img-silhouette {
-      background-color: #ddd;
-    }
-
-    .contact {
-      padding-bottom: 30px;
-    }
-    .contact a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .button-mail{
-      display: inline-block;
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #fff;
-    }
-    .button-mail:hover{
-      background-color: #fff;
-      color: rgb(64, 53, 50);
-    }
-
 
     hr {
-      max-width: 600px;
       margin: 50px auto;
       border: 0;
-      border-top: 1px solid #8c8b8b;
       text-align: center;
       height: 1px;
+      background-color: #8c8b8b;
+    }
+    hr.separator--no-bottom-margin {
+      margin-bottom: 0;
+    }
+    hr.separator--no-top-margin {
+      margin-top: 0;
     }
     hr:after {
       font-family: Arial, Helvetica, sans-serif;
       content: '§';
       display: inline-block;
       position: relative;
-      top: -14px;
-      background: #fff;
+      top: -10px;
       color: #8c8b8b;
       font-size: 18px;
       -webkit-transform: rotate(60deg);
       -moz-transform: rotate(60deg);
       transform: rotate(60deg);
     }
-    
+
     h2 {
       margin: 0px 0 100px 0;
       text-align: center;
+      font-weight: normal;
     }
-
 
   </style>
   <title>OUT OF SCREEN</title>
 </head>
-<body>
-<div class="wrapper">
-  <div class="title-wrapper">
-    <div class='title-background'>
-      <div class='title-text'>OUT OF<br>SCREEN</div>
-    </div>
-  </div>
-</div>
 
-<div class='tagline'>
-  <div class='content-wrapper'>
-    Internet<br>Makers
+<body>
+
+<div class="title-wrapper">
+  <div class='title-background'>
+      <svg viewbox="0 0 55 55">
+        <rect x="0" y="5" width="50" height="50" fill="#ccc"/>
+
+        <text x="0" y="11" font-family="arial" font-size="14" font-weight="bold" fill="#000" style="
+          font-style:italic;
+          letter-spacing: -0.12em;
+          text-shadow: 0 1px #999,
+                        0 2px #999,
+                        0 3px #999,
+                        0 4px #999,
+                        0 5px #999,
+                        0 6px #999,
+                        0 7px #999,
+                        0 8px #999,
+                        0 9px #999,
+                        0 10px #999,
+                        0 11px #999,
+                        0 12px #999,
+                        0 13px #999,
+                        0 14px #999,
+                        0 15px #999,
+                        0 16px #999,
+                        0 17px #999,
+                        0 18px #999,
+                        0 19px #999,
+                        0 20px #999,
+                        0 21px #999,
+                        0 22px #999,
+                        0 23px #999,
+                        0 24px #999,
+                        0 25px #999,
+                        0 26px #999,
+                        0 27px #999,
+                        0 28px #999,
+                        0 29px #999,
+                        0 30px #999">
+          <tspan x="3">OUT OF</tspan>
+          <tspan x="-0.5" dy="20">SCREEN</tspan>
+        </text>
+      </svg>
   </div>
 </div>
+<style>
+  .title-wrapper {
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  svg {
+    /* margin: 100px; */
+    width: 60%;
+    max-width: 300px;
+  }
+</style>
 
 <hr>
 
 <div class="description">
   <div class='content-wrapper'>
-    <i>OUT&nbsp;OF&nbsp;SCREEN</i> is a software development agency specialized in web technologies. Our main areas of expertise are <b>Ruby&nbsp;On&nbsp;Rails</b>, <b>NodeJS</b> and <b>Python</b> stacks.<br/>
-    We also have extensive experience in <b>web scraping</b> and <b>data mining</b>.
+    <p>
+      <i>OUT&nbsp;OF&nbsp;SCREEN</i> is a software development agency specialized in web technologies. Our main areas of expertise are <b>Ruby&nbsp;On&nbsp;Rails</b>, <b>NodeJS</b> and <b>Python</b> stacks.
+    </p>
+    <p>
+      We also have extensive experience in <b>web scraping</b> and <b>data mining</b>.
+    </p>
   </div>
 </div>
+<style>
+  .description {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .description p {
+    margin-bottom: 10px;
+  }
+</style>
 
-<hr>
+<hr class="separator--no-bottom-margin">
+
+<div class='tagline'>
+  <div class='content-wrapper'>
+    <p>Internet<br>Makers</p>
+    <img src="img/dino.png">
+  </div>
+</div>
+<style>
+  .tagline {
+    padding: 120px 0;
+    text-align: center;
+    font-size: 30px;
+    background-color: #5d8bc7;
+    color: #fff;
+  }
+  .tagline p {
+    margin-bottom: 40px;
+  }
+  .tagline img {
+    max-width: 30%;
+  }
+</style>
+
+<hr class="separator--no-top-margin">
 
 <div class="portfolio">
   <div class='content-wrapper'>
@@ -249,7 +179,7 @@
         </div>
         <div class='portfolio-description'>
           <h3>
-            2017 - <a href='http://www.anyojibeltrando.com/'>ANYOJIBELTRANDO</a>
+            2017 - <a href='http://www.anyojibeltrando.com/'>ANYOJI BELTRANDO</a>
           </h3>
           <p>
             Wordpress website for an architecture agency. We developed a custom theme with a custom content slider and different responsive layouts.
@@ -276,126 +206,161 @@
     </div>
   </div>
 </div>
+<style>
+  .portfolio-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #fff;
+  }
+  .portfolio-item:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .portfolio-image img{
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    box-shadow: 5px 10px 20px #ddd;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: 500px) {
+    .portfolio-image img {
+      max-width: 100%;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    .portfolio-image {
+      margin-right: 30px;
+    }
+    .portfolio-item {
+      display: flex;
+      flex-direction: row;
+    }
+    .portfolio-item h3 {
+      margin-top: 0;
+    }
+    .portfolio-image img {
+      max-width: 200px;
+    }
+  }
+</style>
 
 <hr>
 
-<div class='team'>
-  <div class='content-wrapper'>
-    <h2>Team</h2>
-
-    <div class='member'>
-      <h3 class='member-title'>
-        <img src='./img/adrien.jpg'>
-        Adrien Di Pasquale
-      </h3>
-      <p class='member-description'>
-        After graduating a CS master's degree from <a href='https://www.insa-lyon.fr/'>INSA Lyon</a>, I have accumulated a solid experience by working as a fullstack developer at 2 startups, <a href='https://www.pricingassistant.com/'>Pricing Assistant</a> and <a href='https://www.drivy.com'>Drivy</a>. I am an avid learner and am always eager to help fulfill new projects.
-      </p>
-    </div>
-
-    <div class='member'>
-      <h3 class='member-title'>
-        <img src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjAwJyBoZWlnaHQ9JzIwMCcgZmlsbD0iIzAwMDAwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEwMCAxMDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGQ9Ik03OS40NDUsOTIuN2MzLjEzNi0zLjE1LDUuMDU3LTguNjU5LDUuMzI3LTEzLjU3NGMwLTE2LjcxOS0xNS40NjgtMzAuMjc1LTM0LjYxNC0zMC40Mjd2LTAuMDE0ICAgYy0wLjA1MywwLTAuMTA1LDAuMDA3LTAuMTU4LDAuMDA3Yy0wLjA1NSwwLTAuMTA3LTAuMDA3LTAuMTYtMC4wMDd2MC4wMTRjLTE5LjE0NiwwLjE1MS0zNC42MTIsMTMuNzA4LTM0LjYxMiwzMC40MjcgICBjMC4yNjcsNC45MTUsMi4xODksMTAuNDI0LDUuMzI0LDEzLjU3NEMyMy41NTYsOTUuODgzLDc4LjMxLDk1LjY0OCw3OS40NDUsOTIuN3oiLz48cGF0aCBkPSJNNTAuMDAyLDQzLjU0MWMxMS4zNzgsMCwxOS4xMDktOC42MjgsMTkuMTA5LTE5LjI3MVM2MS4zOCw1LDUwLjAwMiw1Yy0xMS4zOCwwLTE5LjExMyw4LjYyOC0xOS4xMTMsMTkuMjcgICBTMzguNjIyLDQzLjU0MSw1MC4wMDIsNDMuNTQxeiIvPjwvZz48L3N2Zz4=' class='img-silhouette'>
-        You ?
-      </h3>
-      <p class='member-description'>
-        <!-- Come and join -->
-      </p>
-    </div>
+<div class='content-wrapper team'>
+  <h2>Team</h2>
+  <div class='member'>
+    <h3 class='member-title'>
+      <img src='./img/adrien.jpg'>
+      Adrien Di Pasquale
+    </h3>
+    <p class='member-description'>
+      After graduating from <a href='https://www.insa-lyon.fr/'>INSA Lyon</a>, I have accumulated a solid experience by working as a fullstack developer at 2 startups, <a href='https://www.pricingassistant.com/'>Pricing Assistant</a> and <a href='https://www.drivy.com'>Drivy</a>. I am an avid learner and am always eager to work on new projects.
+    </p>
+    <ul class="social">
+      <li><a href="https://www.linkedin.com/in/adriendipasquale/"><img src="./img/LinkedIn-Black-66px.png">LinkedIn</a></li>
+      <li><a href="https://github.com/adipasquale"><img src="./img/GitHub-Mark-64px.png">Github</a></li>
+    </ul>
   </div>
 </div>
+
+<hr class="separator--no-bottom-margin">
+
+<style>
+  .team {
+    margin-bottom: 100px;
+  }
+  .member {
+    margin-top: 30px;
+  }
+  .member-title img {
+    width: 80px;
+    border-radius: 50px;
+    vertical-align: middle;
+    margin-right: 15px;
+  }
+  .member h3 {
+    margin-top: 0;
+    white-space: nowrap;
+  }
+  ul.social {
+    margin: 10px 0;
+    padding: 0;
+    text-align: right;
+  }
+  .social li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .social a {
+    font-size: 14px;
+    color: #666;
+  }
+  .social li img {
+    width: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    opacity: 0.5;
+  }
+  .social li:hover img {
+    opacity: 1;
+  }
+  .social li:hover a{
+    color: #000;
+  }
+</style>
 
 <div class='contact'>
   <div class='content-wrapper'>
-    <h2>Contact</h2>
+    <h2>Contact Infos</h2>
+    <p>
+      We are based in Paris (France)
+    </p>
     <p>
       We are always happy to meet you and discuss your projects. Don't hesitate to reach out !
     </p>
-    <a href='mailto:adrien@outofscreen.com' class='button-mail'>adrien@outofscreen.com</a>
+    <p class='center'>
+      <a href='mailto:adrien@outofscreen.com' class='button-mail'>
+        <img src="img/envelope.png">
+        adrien@outofscreen.com
+      </a>
+    </p>
   </div>
 </div>
-
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/jquery.ba-throttle-debounce.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    const $titleBackground = $(".title-background");
-    const $titleText = $(".title-text");
-
-    let titleHeight;
-    let originalTop;
-
-    var resetSizes = function() {
-      $titleBackground.css({"text-shadow": ""});
-      titleHeight = $titleBackground.offset().top + $titleBackground.height();
-      $titleText.css({"top": ""});
-      originalTop = parseInt($titleText.css("top"))
-    }
-
-    var textShadows = function(pos) {
-      const MAX_SHADOW_SIZE = 100;
-      const GREY_DELTA = 120;
-      const GREY_START = 100;
-      var res = [];
-      for (var i=1; i < pos * MAX_SHADOW_SIZE + 1; i++) {
-        const c = GREY_START + Math.round(i / 100 * pos * GREY_DELTA);
-        res.push(`0 ${i}px rgb(${c}, ${c}, ${c})`);
-      }
-      return res.join(",");
-    };
-
-
-    var top = function(pos) {
-      return `${originalTop - 100 * pos}px`
-    };
-
-    let latestPos = 0;
-    let ticking = false;
-
-    function requestTick(newPos) {
-      if (latestPos != newPos) {
-        latestPos = newPos;
-        if (!ticking) {
-          requestAnimationFrame(repaint);
-        }
-        ticking = true;
-      }
-    }
-
-    const repaint = function() {
-      ticking = false;
-      const drawnPos = latestPos * 0.5; // limit amplitude
-      const newCss = textShadows(drawnPos);
-      const topCss = top(drawnPos);
-      $titleBackground.css("text-shadow", newCss);
-      $titleText.css("top", topCss);
-    }
-
-    resetSizes();
-    // $(window).resize(function(){ resetSizes});
-    // creates jump on mobiles
-
-    // hard-set height in px so it doesn't jump on mobile browsers scroll
-    $titleBackground.css({"height": $titleBackground.css("height")})
-
-    // function handleMouseMove(event) {
-    //   const newPos = Math.round(
-    //     Math.min(event.pageY / titleHeight, 1) * 1000
-    //   ) / 1000;
-    //   requestTick(newPos);
-    // };
-    // $("body").mousemove($.throttle(50, handleMouseMove));
-    // $("body").on("touchstart", function(e) { handleMouseMove(e.touches[0]) });
-    window.setTimeout(
-      function() { 
-        requestTick(0.5)
-      }, 500
-    )
-    $titleText.on("click", function(e) { requestTick(Math.random()) });
-
-  });
-</script>
+<style>
+  .contact {
+    background-color: #2b3f5a;
+    color: #fff;
+    padding: 50px 5px 30px 5px;
+  }
+  .contact h2 {
+    margin-bottom: 50px;
+  }
+  .contact p {
+    margin-bottom: 20px;
+  }
+  p.center {
+    text-align: center;
+  }
+  a.button-mail{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #fff;
+  }
+  .button-mail img{
+    width: 24px;
+    color: #fff;
+    filter: invert(1);
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  a.button-mail:hover{
+    background-color: #fff;
+    color: rgb(64, 53, 50);
+  }
+</style>
 
 </body>
 </html>
