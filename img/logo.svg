@@ -1,0 +1,40 @@
+<svg viewbox="0 0 55 55">
+  <rect x="0" y="5" width="50" height="50" fill="#ccc"/>
+
+  <text x="0" y="11" font-family="arial" font-size="14" font-weight="bold" fill="#000" style="
+    font-style:italic;
+    letter-spacing: -0.12em;
+    text-shadow: 0 1px #999,
+                  0 2px #999,
+                  0 3px #999,
+                  0 4px #999,
+                  0 5px #999,
+                  0 6px #999,
+                  0 7px #999,
+                  0 8px #999,
+                  0 9px #999,
+                  0 10px #999,
+                  0 11px #999,
+                  0 12px #999,
+                  0 13px #999,
+                  0 14px #999,
+                  0 15px #999,
+                  0 16px #999,
+                  0 17px #999,
+                  0 18px #999,
+                  0 19px #999,
+                  0 20px #999,
+                  0 21px #999,
+                  0 22px #999,
+                  0 23px #999,
+                  0 24px #999,
+                  0 25px #999,
+                  0 26px #999,
+                  0 27px #999,
+                  0 28px #999,
+                  0 29px #999,
+                  0 30px #999">
+    <tspan x="3">OUT OF</tspan>
+    <tspan x="-0.5" dy="20">SCREEN</tspan>
+  </text>
+</svg>

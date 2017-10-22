@@ -21,11 +21,7 @@
       font-family: Helvetica;
     }
     html, body{
-      /* min-height: 3000px; */
       width: 100%;
-    }
-    body {
-      margin-top: 100px;
     }
 
     .content-wrapper{
@@ -66,7 +62,15 @@
       font-weight: normal;
     }
 
+    a.anchor {
+      display: block;
+      position: relative;
+      top: -70px;
+      visibility: hidden;
+    }
   </style>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
   <title>OUT OF SCREEN</title>
 
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -83,64 +87,78 @@
 
 <body>
 
-<div class="title-wrapper">
-  <div class='title-background'>
-      <svg viewbox="0 0 55 55">
-        <rect x="0" y="5" width="50" height="50" fill="#ccc"/>
-
-        <text x="0" y="11" font-family="arial" font-size="14" font-weight="bold" fill="#000" style="
-          font-style:italic;
-          letter-spacing: -0.12em;
-          text-shadow: 0 1px #999,
-                        0 2px #999,
-                        0 3px #999,
-                        0 4px #999,
-                        0 5px #999,
-                        0 6px #999,
-                        0 7px #999,
-                        0 8px #999,
-                        0 9px #999,
-                        0 10px #999,
-                        0 11px #999,
-                        0 12px #999,
-                        0 13px #999,
-                        0 14px #999,
-                        0 15px #999,
-                        0 16px #999,
-                        0 17px #999,
-                        0 18px #999,
-                        0 19px #999,
-                        0 20px #999,
-                        0 21px #999,
-                        0 22px #999,
-                        0 23px #999,
-                        0 24px #999,
-                        0 25px #999,
-                        0 26px #999,
-                        0 27px #999,
-                        0 28px #999,
-                        0 29px #999,
-                        0 30px #999">
-          <tspan x="3">OUT OF</tspan>
-          <tspan x="-0.5" dy="20">SCREEN</tspan>
-        </text>
-      </svg>
+<header>
+  <img src="img/logo.png">
+  <div class="section-links">
+    <a href="#description">Skills</a>
+    <a href="#portfolio">Projects</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
   </div>
-</div>
+</header>
 <style>
-  .title-wrapper {
-    text-align: center;
-    margin-bottom: 100px;
+  header {
+    position: sticky;
+    padding: 20px 0;
+    background: #fff;
+    top: 0;
+    height: 170px;
+    transition: .4s ease;
+    z-index: 10;
+    border-bottom: 1px solid #ccc;
   }
-  svg {
-    /* margin: 100px; */
-    width: 60%;
-    max-width: 300px;
+  header.shrink {
+    height: 50px;
+  }
+
+  header img{
+    position: absolute;
+    display: block;
+    max-width: 150px;
+    transition: .4s ease;
+    left: 50%;
+    transform:translateX(-50%);
+  }
+  header.shrink img{
+    max-width: 50px;
+    left: 20px;
+    transform: none;
+  }
+
+  header .section-links {
+    display: none;
+  }
+  header.shrink .section-links {
+    display: inherit;
+    text-align: right;
+    left: 50%;
+    line-height: 50px;
+  }
+  header.shrink .section-links a{
+    text-decoration: none;
+    margin: 0 30px 0 0;
+  }
+
+  @media screen and (max-width: 400px) {
+    header.shrink .section-links a{
+      font-size: 12px;
+      margin: 0 12px 0 0;
+    }
+  }
+
+</style>
+
+<div class="full-image">
+  <img src="img/pineapple-macbook.jpg">
+</div>
+
+<style>
+  .full-image img{
+    width: 100%;
   }
 </style>
 
-<hr>
-
+<a class="anchor" id="description"></a>
 <div class="description">
   <div class='content-wrapper'>
     <p>
@@ -149,6 +167,20 @@
     <p>
       We also have extensive experience in <b>web scraping</b> and <b>data mining</b>.
     </p>
+
+    <ul class="skills-list">
+      <li><i class="devicon-rails-plain-wordmark"></i></li>
+      <li><i class="devicon-javascript-plain"></i></li>
+      <li><i class="devicon-python-plain-wordmark"></i></li>
+      <li><i class="devicon-backbonejs-plain-wordmark"></i></li>
+      <li><i class="devicon-html5-plain-wordmark"></i></li>
+      <li><i class="devicon-heroku-plain-wordmark"></i></li>
+      <li><i class="devicon-mongodb-plain-wordmark"></i></li>
+      <li><i class="devicon-nodejs-plain-wordmark"></i></li>
+      <li><i class="devicon-mysql-plain-wordmark"></i></li>
+      <li><i class="devicon-wordpress-plain-wordmark"></i></li>
+    </ul>
+
   </div>
 </div>
 <style>
@@ -159,34 +191,41 @@
   .description p {
     margin-bottom: 10px;
   }
+  .skills-list {
+    list-style-type: none;
+    margin: 20px 0 0 0;
+  }
+  .skills-list li {
+    display: inline-block;
+    font-size: 60px;
+    margin: 20px;
+  }
 </style>
 
 <hr class="separator--no-bottom-margin">
 
 <div class='tagline'>
   <div class='content-wrapper'>
-    <p>Internet<br>Makers</p>
-    <img src="img/dino.png">
+    Internet <img src="img/dino.png"> Makers
   </div>
 </div>
 <style>
   .tagline {
-    padding: 120px 0;
+    padding: 30px 0;
     text-align: center;
     font-size: 30px;
     background-color: #5d8bc7;
     color: #fff;
   }
-  .tagline p {
-    margin-bottom: 40px;
-  }
   .tagline img {
     max-width: 54px;
+    vertical-align: middle;
   }
 </style>
 
 <hr class="separator--no-top-margin">
 
+<a class="anchor" id="portfolio"></a>
 <div class="portfolio">
   <div class='content-wrapper'>
     <h2>Recent Projects</h2>
@@ -264,6 +303,7 @@
 
 <hr>
 
+<a class="anchor" id="team"></a>
 <div class='content-wrapper team'>
   <h2>Team</h2>
   <div class='member'>
@@ -327,15 +367,10 @@
   }
 </style>
 
+<a class="anchor" id="contact"></a>
 <div class='contact'>
   <div class='content-wrapper'>
-    <h2>Contact Infos</h2>
-    <p>
-      We are based in Paris (France)
-    </p>
-    <p>
-      We are always happy to meet you and discuss your projects. Don't hesitate to reach out !
-    </p>
+    <h2>Contact</h2>
     <p class='center'>
       <a href='mailto:adrien@outofscreen.com' class="button">
         <img src="img/envelope.png">
@@ -346,6 +381,13 @@
         (+33)6 44 63 44 16
       </a>
     </p>
+    <p>
+      We are based in the Paris XXe
+    </p>
+    <p>
+      We are always happy to meet you and discuss your projects. Don't hesitate to reach out !
+    </p>
+    <img src="img/map.jpg" class="map">
   </div>
 </div>
 <style>
@@ -385,8 +427,105 @@
   .contact a.button:hover img{
     filter: none;
   }
+  .contact .map{
+    max-width: 100%;
+    border-radius: 100px;
+  }
 
 </style>
+
+<script>
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for
+  // N milliseconds. If `immediate` is passed, trigger the function on the
+  // leading edge, instead of the trailing.
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+
+  function scrollHandler() {
+    var header = document.querySelector("header");
+    if ( window.scrollY > 150 ) {
+      header.classList.add('shrink');
+    } else if ( window.scrollY < 30 ) {
+      header.classList.remove('shrink');
+    }
+  };
+
+  function scrollTo(element, duration) {
+    var e = document.documentElement;
+    if(e.scrollTop===0){
+      var t = e.scrollTop;
+      ++e.scrollTop;
+      e = t+1===e.scrollTop--?e:document.body;
+    }
+    scrollToC(e, e.scrollTop, element, duration);
+  }
+
+  function scrollToC(element, from, to, duration) {
+    if (duration < 0) return;
+    if(typeof from === "object")from=from.offsetTop;
+    if(typeof to === "object")to=to.offsetTop;
+    scrollToX(element, from, to, 0, 1/duration, 20, easeOutCuaic);
+  }
+
+  function scrollToX(element, x1, x2, t, v, step, operacion) {
+    if (t < 0 || t > 1 || v <= 0) return;
+    element.scrollTop = x1 - (x1-x2)*operacion(t);
+    t += v * step;
+    setTimeout(function() {
+      scrollToX(element, x1, x2, t, v, step, operacion);
+    }, step);
+  }
+
+  function easeOutCuaic(t){
+    t--;
+    return t*t*t+1;
+  }
+
+  function sectionLinkHandler(e) {
+    var anchor = e.currentTarget.href.split("#")[1];
+    var target = document.getElementById(anchor);
+    scrollTo(target, 1000);
+  }
+
+  function skillIconOverHandler(e) {
+    e.currentTarget.classList.add("colored");
+  };
+  function skillIconOutHandler(e) {
+    e.currentTarget.classList.remove("colored");
+  };
+
+  function init() {
+    scrollHandler();
+    this.addEventListener("scroll", debounce(scrollHandler, 100));
+    var sectionLinks = document.querySelectorAll(".section-links a");
+    for(i=0; i<sectionLinks.length; i++) {
+      sectionLinks[i].addEventListener('click', sectionLinkHandler);
+    }
+
+    var skillsIcons = document.querySelectorAll(".skills-list i");
+    for(i=0; i<skillsIcons.length; i++) {
+      skillsIcons[i].addEventListener('mouseover', skillIconOverHandler);
+      skillsIcons[i].addEventListener('touchstart', skillIconOverHandler);
+      skillsIcons[i].addEventListener('mouseout', skillIconOutHandler);
+      skillsIcons[i].addEventListener('touchend', skillIconOutHandler);
+    }
+  };
+
+  window.onload = init();
+</script>
 
 <script type="application/ld+json">
 {
