@@ -91,14 +91,17 @@
 <body>
 
 <header>
-  <img src="img/logo.png">
-  <div class="section-links">
-    <a href="#description">Skills</a>
-    <a href="#portfolio">Projects</a>
-    <a href="#team">Team</a>
-    <a href="#contact">Contact</a>
+  <div class="content-wrapper-header">
+    <img src="img/logo.png">
+    <div class="section-links">
+      <a href="#description">Skills</a>
+      <a href="#portfolio">Missions</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </header>
+
 <style>
   header {
     position: fixed;
@@ -125,7 +128,6 @@
   }
   header.shrink img{
     max-width: 50px;
-    left: 20px;
     transform: none;
   }
 
@@ -147,6 +149,22 @@
     header.shrink .section-links a{
       font-size: 12px;
       margin: 0 12px 0 0;
+    }
+  }
+
+  .content-wrapper-header {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+  }
+  @media screen and (max-width: 600px) {
+    header.shrink img{
+      left: 20px;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    header.shrink img{
+      left: 0;
     }
   }
 
@@ -240,8 +258,41 @@
 <a class="anchor" id="portfolio"></a>
 <div class="portfolio">
   <div class='content-wrapper'>
-    <h2>Recent Projects</h2>
+    <h2>Recent Missions</h2>
     <div class='portfolio-wrapper'>
+
+      <div class='portfolio-item'>
+        <div class='portfolio-image'>
+          <img src='./img/lewagon.jpg' alt='taleme logo'>
+        </div>
+        <div class='portfolio-description'>
+          <h3>
+            2018 - <a href='https://www.lewagon.com/'>Le Wagon</a>
+          </h3>
+          <p>
+            I gave classes in this coding bootcamp about the basics of software development, and web applications with Rails.
+          </p>
+        </div>
+      </div>
+
+      <hr/>
+
+      <div class='portfolio-item'>
+        <div class='portfolio-image'>
+          <img src='./img/taleme-logo.jpg' alt='taleme logo'>
+        </div>
+        <div class='portfolio-description'>
+          <h3>
+            2017-2018 - <a href='https://www.taleme-shop.com/'>Tale Me</a>
+          </h3>
+          <p>
+            Improvements on this existing Shopify website : new features and fixes for the theme, and a new full-blown Shopify app to deal with a custom checkout for recurring orders.
+          </p>
+        </div>
+      </div>
+
+      <hr/>
+
       <div class='portfolio-item'>
         <div class='portfolio-image'>
           <img src='./img/anyojibeltrando-cropped-min.png' alt='anyojibeltrando screenshot'>
@@ -255,6 +306,7 @@
           </p>
         </div>
       </div>
+
       <hr>
 
       <div class='portfolio-wrapper'>
@@ -317,7 +369,6 @@
 
 <a class="anchor" id="team"></a>
 <div class='content-wrapper team'>
-  <h2>Team</h2>
   <div class='member'>
     <h3 class='member-title'>
       <img src='./img/adrien.jpg'>
@@ -394,7 +445,7 @@
       </a>
     </p>
     <p>
-      We are based in the Paris XXe
+      We are based in Paris XXe
     </p>
     <p>
       We are always happy to meet you and discuss your projects. Don't hesitate to reach out !
