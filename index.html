@@ -625,5 +625,29 @@
 }
 </script>
 
+<script type='text/javascript'>
+  //some default pre init
+  var Countly = Countly || {};
+  Countly.q = Countly.q || [];
+
+  //provide countly initialization parameters
+  Countly.app_key = '372994f818c074c61b9e4cd9ee078200bf4dce60';
+  Countly.url = 'https://t.outofscreen.com';
+
+  Countly.q.push(['track_sessions']);
+  Countly.q.push(['track_pageview']);
+  Countly.q.push(['track_clicks']);
+
+  //load countly script asynchronously
+  (function() {
+      var cly = document.createElement('script'); cly.type = 'text/javascript';
+      cly.async = true;
+      //enter url of script here
+      cly.src = 'https://t.outofscreen.com/sdk/web/countly.min.js';
+      cly.onload = function(){Countly.init()};
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cly, s);
+  })();
+</script>
+
 </body>
 </html>
